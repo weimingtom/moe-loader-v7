@@ -51,14 +51,23 @@ namespace MoeLoader
             }
         }
 
-        private LinkedList<string> usedItems = new LinkedList<string>();
+        public LinkedList<string> usedItems = new LinkedList<string>();
 
         /// <summary>
         /// 最近搜索过的词
         /// </summary>
         public string[] UsedItems
         {
-            get { return usedItems.ToArray(); }
+            get {
+                if (usedItems.Count > 0)
+                {
+                    return usedItems.ToArray();
+                }
+                else
+                {
+                    return new string[0];
+                }
+            }
         }
 
         /// <summary>

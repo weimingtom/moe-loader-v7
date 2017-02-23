@@ -73,6 +73,10 @@
     <StartupObject>MoeLoader.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -98,11 +102,32 @@
     <Compile Include="ErrForm.Designer.cs">
       <DependentUpon>ErrForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoeSite\AbstractImageSite.cs" />
+    <Compile Include="MoeSite\BooruProcessor.cs" />
+    <Compile Include="MoeSite\ImageSite.cs" />
+    <Compile Include="MoeSite\Img.cs" />
+    <Compile Include="MoeSite\MyWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MoeSite\SiteManager.cs" />
+    <Compile Include="MoeSite\ViewedID.cs" />
     <Compile Include="PreFetcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SearchControl.xaml.cs">
       <DependentUpon>SearchControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SitePack\SiteBooru.cs" />
+    <Compile Include="SitePack\SiteDanbooru.cs" />
+    <Compile Include="SitePack\SiteEshuu.cs" />
+    <Compile Include="SitePack\SiteLargeBooru.cs" />
+    <Compile Include="SitePack\SiteMiniTokyo.cs" />
+    <Compile Include="SitePack\SiteMjvArt.cs" />
+    <Compile Include="SitePack\SitePixiv.cs" />
+    <Compile Include="SitePack\SitePixivPhone.cs" />
+    <Compile Include="SitePack\SiteProvider.cs" />
+    <Compile Include="SitePack\SiteSankaku.cs" />
+    <Compile Include="SitePack\SiteWCosplay.cs" />
+    <Compile Include="SitePack\SiteZeroChan.cs" />
     <Compile Include="Win7TaskBar.cs" />
     <Page Include="OptionWnd.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -218,12 +243,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MoeSite\MoeSite.csproj">
-      <Project>{D25819AA-59F6-4193-9071-F638F85FFCCF}</Project>
-      <Name>MoeSite</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\close.png" />
     <Resource Include="Images\max.png" />
     <Resource Include="Images\min.png" />
@@ -249,6 +268,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="m.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SitePack\image\behoimi.ico" />
+    <EmbeddedResource Include="SitePack\image\chan.s.ico" />
+    <EmbeddedResource Include="SitePack\image\donmai.ico" />
+    <EmbeddedResource Include="SitePack\image\e-shuushuu.ico" />
+    <EmbeddedResource Include="SitePack\image\gelbooru.ico" />
+    <EmbeddedResource Include="SitePack\image\idol.s.ico" />
+    <EmbeddedResource Include="SitePack\image\konachan.ico" />
+    <EmbeddedResource Include="SitePack\image\minitokyo.ico" />
+    <EmbeddedResource Include="SitePack\image\mjv-art.ico" />
+    <EmbeddedResource Include="SitePack\image\pixiv.ico" />
+    <EmbeddedResource Include="SitePack\image\safebooru.ico" />
+    <EmbeddedResource Include="SitePack\image\worldcosplay.ico" />
+    <EmbeddedResource Include="SitePack\image\yande.ico" />
+    <EmbeddedResource Include="SitePack\image\zerochan.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

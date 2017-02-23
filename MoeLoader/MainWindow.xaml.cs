@@ -1030,7 +1030,9 @@ namespace MoeLoader
                 if (!IsCtrlDown())
                 {
                     string words = "";
-                    foreach (string word in searchControl.UsedItems)
+                    LinkedList<string> usedItems = searchControl.usedItems;
+                    string[] arrUsedItems = usedItems.ToArray();
+                    foreach (string word in arrUsedItems)
                     {
                         words += word + "|";
                     }
