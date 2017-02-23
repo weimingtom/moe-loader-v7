@@ -11,6 +11,8 @@ namespace SitePack
         {
             List<MoeLoader.ImageSite> sites = new List<MoeLoader.ImageSite>();
 
+            sites.Add(new SiteZeroChan());
+            
             sites.Add(new SiteLargeBooru(
                 //"https://yande.re/post/index.xml?page={0}&limit={1}&tags={2}", //XML
                 "https://yande.re/post?page={0}&limit={1}&tags={2}", //HTML
@@ -76,7 +78,7 @@ namespace SitePack
             //chara
             sites.Add(new SiteEshuu(4));
 
-            sites.Add(new SiteZeroChan());
+            //sites.Add(new SiteZeroChan());
 
             sites.Add(new SiteMjvArt());
 

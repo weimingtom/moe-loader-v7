@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.Diagnostics;
+using System.Net;
 
 namespace SitePack
 {
@@ -76,10 +78,26 @@ namespace SitePack
                 url = url.Substring(0, url.Length - 6);
             }
 
+            /*
+           	System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            req.UserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)";
+            req.Proxy = proxy;
+            req.Timeout = 8000;
+            req.Method = "GET";
+            req.ReadWriteTimeout = 8000;
+            req.KeepAlive = true;
+            req.UseDefaultCredentials = true;
+            //prevent 303 See Other
+            req.AllowAutoRedirect = true;
+			System.Net.WebResponse rsp = req.GetResponse();
+            */
+           
             MoeLoader.MyWebClient web = new MoeLoader.MyWebClient();
             web.Proxy = proxy;
 
             web.Encoding = Encoding.UTF8;
+            //Debug.WriteLine("======>DownloadString ==========>" + url);
+            url = "https://yande.re/";
             string pageString = web.DownloadString(url);
             web.Dispose();
 

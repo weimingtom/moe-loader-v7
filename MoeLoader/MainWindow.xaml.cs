@@ -863,11 +863,11 @@ namespace MoeLoader
                     }
                     catch (Exception ex)
                     {
-                        if (!(o as SessionState).IsStop)
+                    	if (!(o as SessionState).IsStop)
                         {
                             Dispatcher.Invoke(new VoidDel(() =>
                             {
-                                MessageBox.Show(this, "获取图片遇到错误: " + ex.Message, "Moe Loader", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                MessageBox.Show(this, "获取图片遇到错误: " + ex.Message + "," + ex.StackTrace, "Moe Loader", MessageBoxButton.OK, MessageBoxImage.Warning);
                             }));
                         }
                     }
