@@ -4,6 +4,7 @@ Automatically exported from code.google.com/p/moe-loader-v7
 ## Ref
 * https://github.com/galaxy001/moe-loader  
 * https://github.com/delbertbeta/moe-loader  
+* https://github.com/earlnuclear/DanbooruBrowser  
 
 ## About
 MoeLoader是一个基于WPF的图片浏览、收集工具。
